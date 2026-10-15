@@ -1,0 +1,19 @@
+import React from 'react';
+
+interface ActionButtonProps {
+  onClick: () => void;
+  label: string;
+  disabled?: boolean;
+}
+
+export const ActionButton: React.FC<ActionButtonProps> = ({ onClick, label, disabled = false }) => {
+  return (
+    <button
+      className="relative z-50 flex items-center justify-center px-4 py-2.5 text-sm font-medium text-white bg-slate-900 hover:bg-slate-800 active:scale-95 rounded-lg shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-slate-400 disabled:opacity-50 touch-manipulation"
+      onClick={onClick}
+      disabled={disabled}
+    >
+      {label}
+    </button>
+  );
+};
